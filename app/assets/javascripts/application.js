@@ -12,5 +12,10 @@
 //
 //= require rails-ujs
 //= require activestorage
+//= require jquery
+//= require popper
+//= require bootstrap
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(alert('sadasdas'))
