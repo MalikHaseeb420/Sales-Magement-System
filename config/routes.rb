@@ -3,7 +3,17 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'home#index'
-  get 'home/about', to: 'home#about', as: 'about'
-  get 'home/contact_us', to: 'home#contact_us', as: 'contact_us'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :user_roles
+  resources :home, only: [:index] do
+    collection do
+      get :about
+      get :contact_us
+    end
+  end
+  resources :admin,only: [:index] do
+    collection do
+      get :users_list
+      get :user_roles_list
+    end
+  end
 end
