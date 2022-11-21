@@ -9,11 +9,11 @@ class HomeController < ApplicationController
   def contact_us; end
 
   private
+
   def redirect_user_dashaboard
-    if current_user
-      if current_user.is_admin?
-        render template: 'admin/index',layout:'admin_dashboard', formats: [:html]
-      end
-     end
+    return unless current_user
+    return unless current_user.is_admin?
+
+    render template: 'admin/index', layout: 'admin_dashboard', formats: [:html]
   end
 end

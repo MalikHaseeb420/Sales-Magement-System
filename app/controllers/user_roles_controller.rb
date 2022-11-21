@@ -1,19 +1,22 @@
+# frozen_string_literal: true
+
 class UserRolesController < ApplicationController
   def create
     @role = UserRole.new(roles_params)
-    if @role.save
-      respond_to do |format|
-        format.js
-      end
+    return unless @role.save
+
+    respond_to do |format|
+      format.js
     end
   end
 
   def destroy
     @user_role = UserRole.find(params[:id])
-    if @user_role.delete
-      redirect_to user_roles_list_admin_index_path
-    end
+    return unless @user_role.delete
+
+    redirect_to user_roles_list_admin_index_path
   end
+
   private
 
   def roles_params

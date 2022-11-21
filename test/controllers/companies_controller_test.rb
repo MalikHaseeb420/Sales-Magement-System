@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-class UserRoleTest < ActiveSupport::TestCase
+class CompaniesControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

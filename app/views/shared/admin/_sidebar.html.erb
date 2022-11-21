@@ -19,8 +19,10 @@
       <i class="fa-solid fa-user-plus"></i> Jobs
     <% end %>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Comapanies</a>
+  <li class="nav-item" id="comapies_list">
+    <%= link_to companies_admin_index_path, class:'nav-link' do %>
+      <i class="fa-solid fa-building"></i> Comapanies
+    <% end %>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#">Tech Stacks</a>

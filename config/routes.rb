@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'home#index'
   resources :user_roles
+  resources :companies
   resources :home, only: [:index] do
     collection do
       get :about
@@ -14,6 +15,7 @@ Rails.application.routes.draw do
     collection do
       get :users_list
       get :user_roles_list
+      get :companies
     end
   end
 end
