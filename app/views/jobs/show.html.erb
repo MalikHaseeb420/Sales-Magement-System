@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+<% if @job.poster.attached? %>
+  <%= image_tag @job.poster, alt: "text" %>
+<% end %>
+<p>
+  <strong>Title:</strong>
+  <%= @job.title %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%= @job.description %>
+</p>
+<p>
+  <strong>User:</strong>
+  <%= @job.user.name %>
+</p>
+<p>
+  <strong>Tech stack:</strong>
+  <%= @job.tech_stack.stack_name %>
+</p>
+<%= link_to 'Edit', edit_job_path(@job) %> |
+<%= link_to 'Back', jobs_path %>

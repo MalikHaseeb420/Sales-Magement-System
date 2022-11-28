@@ -1,0 +1,10 @@
+<div class="card col-3 me-2" style="width: 18rem;">
+  <% if job.poster.attached? %>
+    <%= image_tag job.poster, alt: "poster",class:"card-img-top poster-img " %>
+  <% end %>
+  <div class="card-body">
+    <h5 class="card-title"><%= job.title %></h5>
+    <p class="card-text"><%= job.description %></p>
+    <%= link_to 'Details', job_path(job),class:'btn btn-primary' %>
+  </div>
+</div>
