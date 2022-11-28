@@ -1,9 +1,9 @@
 <div class="container py-5">
   <div class="row py-5 ">
     <div class="p-3 col-11 mx-auto tab-header d-flex align-item-center justify-content-between">
-      <h3>User Roles</h3>
+      <h3>Tech Stacks</h3>
       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addRoleModal">
-        <i class="fa-solid fa-plus"></i> Register New Company
+        <i class="fa-solid fa-plus"></i> Add Tech Stack
       </button>
     </div>
     <div class="p-3 col-11 mx-auto page-body">
@@ -20,22 +20,18 @@
           <thead class="bg-light">
             <tr>
               <th scope="col">#</th>
-              <th scope="col">Company Name</th>
-              <th scope="col">Employess Count</th>
+              <th scope="col">Stack Name</th>
               <th></th>
             </tr>
           </thead>
           <tbody id="companies_table">
-            <% if !@companies.blank? %>
-              <% for company in @companies %>
+            <% if !@tech_stacks.blank? %>
+              <% for teck_stack in @tech_stacks %>
                 <tr>
-                  <td class="col"><%= company.id %></td>
-                  <td class="col"><%= company.name %></td>
+                  <td class="col"><%= teck_stack.id %></td>
+                  <td class="col"><%= teck_stack.stack_name %></td>
                   <td class="col">
-                    <%= company.users.count %>
-                  </td>
-                  <td class="col">
-                    <%= link_to "Delete",company_path(company),method: :delete,class:'btn btn-danger'  %>
+                    <%= link_to "Delete",tech_stack_path(teck_stack),method: :delete,class:'btn btn-danger'  %>
                   </td>
                 </tr>
               <% end %>
@@ -47,7 +43,7 @@
   </div>
 </div>
 <script>
-  $('#companies_list').addClass('active');
+  $('#tech_stacks_url').addClass('active');
 </script>
 <!-- Button trigger modal -->
 <!-- Modal -->
@@ -55,14 +51,14 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="addRoleModalLabel">Add New Company</h5>
+        <h5 class="modal-title" id="addRoleModalLabel">Add New Stack</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <%= form_for(Company.new,remote: true)  do |f| %>
+      <%= form_for(TechStack.new,remote: true)  do |f| %>
         <div class="modal-body">
           <div class="form-group">
-            <label class="form-label"> Company Name </label>
-            <%= f.text_field :name,class:"form-control" %>
+            <label class="form-label"> Stack Name </label>
+            <%= f.text_field :stack_name,class:"form-control" %>
           </div>
         </div>
         <div class="modal-footer">

@@ -10,7 +10,12 @@ class CompaniesController < ApplicationController
     end
   end
 
-  def destroy; end
+  def destroy
+    @company = Company.find(params[:id])
+    return unless @company.delete
+
+    redirect_to companies_admin_index_path
+  end
 
   private
 

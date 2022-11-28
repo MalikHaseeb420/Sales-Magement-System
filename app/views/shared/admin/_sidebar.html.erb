@@ -19,13 +19,15 @@
       <i class="fa-solid fa-user-plus"></i> Jobs
     <% end %>
   </li>
-  <li class="nav-item" id="comapies_list">
+  <li class="nav-item" id="companies_list">
     <%= link_to companies_admin_index_path, class:'nav-link' do %>
       <i class="fa-solid fa-building"></i> Comapanies
     <% end %>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Tech Stacks</a>
+  <li class="nav-item" id="tech_stacks_url">
+    <%= link_to tech_stacks_admin_index_path, class:'nav-link' do %>
+      <i class="fa-solid fa-building"></i> Tech Stacks
+    <% end %>
   </li>
   <li class="nav-item">
     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>

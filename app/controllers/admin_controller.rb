@@ -15,4 +15,8 @@ class AdminController < ApplicationController
   def companies
     @companies = Company.all
   end
+
+  def tech_stacks
+    @tech_stacks = TechStack.all
+  end
 end

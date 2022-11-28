@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_one_attached :profile_image
   belongs_to :user_role
   belongs_to :company
-
+  has_many :jobs
   def is_admin?
     @user_role = UserRole.find(user_role_id)
     return true if @user_role.role_name.casecmp('admin').zero?
