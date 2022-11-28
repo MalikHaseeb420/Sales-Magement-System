@@ -1,0 +1,51 @@
+<div class="container py-5">
+  <div class="row py-5 ">
+    <div class="p-3 col-11 mx-auto tab-header d-flex align-item-center justify-content-between">
+      <h3>Users</h3>
+      <%= link_to (new_user_invitation_path) do  %>
+        <i class="fa-solid fa-plus"></i> New User
+      <% end %>
+    </div>
+    <div class="p-3 col-11 mx-auto page-body">
+      <div class="row p-0">
+        <div class="col-4 ms-auto">
+          <div class="input-group mb-3 ">
+            <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
+            <input type="text" class="form-control" placeholder="search user here">
+          </div>
+        </div>
+      </div>
+      <div class="row p-0">
+        <table class="table">
+          <thead class="bg-light">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Gender</th>
+              <th scope="col">Role</th>
+              <th scope="col">Invited</th>
+              <th scope="col">Verified</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% if !@users.blank? %>
+              <% for user in @users %>
+                <tr>
+                  <td><%= user.id %></td>
+                  <td><%= user.name %></td>
+                  <td><%= user.gender %></td>
+                  <td><%= get_user_role_name_by_id(user.user_role_id) %></td>
+                  <td class="h6 text-<%= user.invited_to_sign_up? ? "success": "danger"%> "><%= user.invited_to_sign_up? %></td>
+                  <td class="h6 text-<%= user.confirmed? ? "success": "danger"%> "><%= user.confirmed? %></td>
+                </tr>
+              <% end %>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $('#user_list').addClass('active');
+</script>

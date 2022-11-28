@@ -1,0 +1,70 @@
+// Place all the styles related to the Admin controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #f9fafb;
+}
+.navbar {
+  height: 5vh;
+  background-color: rgba(145, 158, 171, 0.16);
+  .navbar-brand {
+    font-size: 20px;
+  }
+}
+.sidebar {
+  padding: 50px 0px;
+  height: 95vh;
+  // background-color: #fff;
+  border-right: 1px dashed #0000008f;
+  ul {
+    margin: 10px auto;
+  }
+  li {
+    padding: 5px;
+  }
+  a {
+    color: #5a5a5a;
+    font-size: 18px;
+    margin: 5px auto;
+    padding: 5px 10px;
+    text-decoration: none;
+    transition: 0.5s all ease-in-out;
+    i {
+      margin: 10px 10px;
+    }
+  }
+  .active {
+    font-weight: 500;
+    border-radius: 25px;
+    background-color: #c1c1c1c2;
+    a {
+      color: #000;
+    }
+  }
+  li:hover {
+    background-color: #c1c1c1c2;
+    border-radius: 25px;
+    a {
+      color: #000;
+    }
+  }
+}
+.dashboard-body {
+  background-color: #f9fafb;
+  height: 95vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  .card {
+    width: 20%;
+  }
+  .page-body {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.171);
+  }
+}

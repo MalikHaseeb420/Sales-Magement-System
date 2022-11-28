@@ -1,0 +1,3 @@
+$("#addRoleModal").modal("hide");
+$("#role_table").append(`<tr><td><%= @role.id%></td><td><%= @role.role_name%></td><td><%= link_to "Delete",user_role_path(@role),method: :delete,class:'btn btn-danger'%></td></tr>`)
+

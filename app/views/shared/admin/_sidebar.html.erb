@@ -1,0 +1,35 @@
+<ul class="nav flex-column">
+  <li class="nav-item" id="home" >
+    <%= link_to admin_index_path, class:'nav-link' do %>
+      <i class="fa-solid fa-chart-line"></i> Dashboard
+    <% end %>
+  </li>
+  <li class="nav-item" id="user_list">
+    <%= link_to users_list_admin_index_path, class:'nav-link' do %>
+      <i class="fa-solid fa-users"></i> Users
+    <% end %>
+  </li>
+  <li class="nav-item" id="roles_list">
+    <%= link_to user_roles_list_admin_index_path, class:'nav-link' do %>
+      <i class="fa-solid fa-user-plus"></i> User Role
+    <% end %>
+  </li>
+  <li class="nav-item" id="jobs_list">
+    <%= link_to jobs_list_admin_index_path, class:'nav-link' do %>
+      <i class="fa-solid fa-user-plus"></i> Jobs
+    <% end %>
+  </li>
+  <li class="nav-item" id="companies_list">
+    <%= link_to companies_admin_index_path, class:'nav-link' do %>
+      <i class="fa-solid fa-building"></i> Comapanies
+    <% end %>
+  </li>
+  <li class="nav-item" id="tech_stacks_url">
+    <%= link_to tech_stacks_admin_index_path, class:'nav-link' do %>
+      <i class="fa-solid fa-building"></i> Tech Stacks
+    <% end %>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+  </li>
+</ul>

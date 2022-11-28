@@ -1,0 +1,4 @@
+$("#addRoleModal").modal("hide");
+$("#companies_table").append(`<tr><td><%= @stack.id%></td><td><%= @stack.stack_name%></td>
+<td><%= link_to "Delete",tech_stack _path(@stack),method: :delete,class:'btn btn-danger'%></td></tr>`)
+
