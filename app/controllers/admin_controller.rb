@@ -19,4 +19,8 @@ class AdminController < ApplicationController
   def tech_stacks
     @tech_stacks = TechStack.all
   end
+
+  def jobs_list
+    @jobs  = Job.all
+  end
 end

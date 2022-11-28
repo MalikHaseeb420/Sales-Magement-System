@@ -19,6 +19,7 @@ Rails.application.routes.draw do
       get :user_roles_list
       get :companies
       get :tech_stacks
+      get :jobs_list
     end
   end
   resources :business_developers,only: [:index]
